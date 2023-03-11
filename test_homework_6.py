@@ -15,10 +15,10 @@ def test_dark_theme():
     dark_theme_enabled = True
     # TODO переключите темную тему в зависимости от времени суток,
     #  но учтите что темная тема может быть включена вручную
-    if current_time in range(6, 22): # полуинтервал (6, 22) означает, что в часы с 6 до 21 включительно используется светлая тема
-        dark_theme_enabled = False
+    if current_time in range(6, 22) and not dark_theme_enabled: # полуинтервал (6, 22) означает, что в часы с 6 до 21 включительно используется светлая тема
+        is_dark_theme = False
     else:
-        dark_theme_enabled = True
+        is_dark_theme = True
     assert is_dark_theme is True
 
 def test_find_suitable_user():
