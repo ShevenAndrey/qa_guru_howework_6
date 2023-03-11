@@ -33,11 +33,7 @@ def test_find_suitable_user():
         {"name": "Maria", "age": 18},
     ]
     # TODO найдите пользователя с именем "Olga"
-    suitable_user = []
-    for user in users:
-        if user["name"] == "Olga":
-            suitable_user.append(user) # добавляем Olga в список
-            suitable_user = suitable_user[0] # словать является объектом списка, т.к. объект один, то обращаемся по нулевому индексу
+    suitable_user = [user for user in users if user["name"] == "Olga"]
     assert suitable_user == {"name": "Olga", "age": 45}
     # TODO найдите всех пользователей младше 20 лет
     suitable_users = [user for user in users if user["age"] < 20]
