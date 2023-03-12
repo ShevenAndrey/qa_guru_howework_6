@@ -33,7 +33,8 @@ def test_find_suitable_user():
         {"name": "Maria", "age": 18},
     ]
     # TODO найдите пользователя с именем "Olga"
-    suitable_user = [user for user in users if user["name"] == "Olga"]
+    suitable_user = [user for user in users if user["name"] == "Olga"] # список с одним элементом - словарем с данными юзера "Olga"
+    suitable_user = suitable_user[0] # берем единственного юзера нашего списка
     assert suitable_user == {"name": "Olga", "age": 45}
     # TODO найдите всех пользователей младше 20 лет
     suitable_users = [user for user in users if user["age"] < 20]
@@ -54,7 +55,7 @@ def test_find_suitable_user():
 
 def print_func(func):
     name_func = ' '.join(func.__name__.title().split('_'))
-    arg_func = 'как-то надо получить аргументы функций как текст'
+    arg_func = 'ДОДЕЛАТЬ'
     return (f'{name_func} [{arg_func}]')
 
 
